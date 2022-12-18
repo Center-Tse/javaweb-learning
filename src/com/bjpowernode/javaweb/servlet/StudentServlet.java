@@ -28,7 +28,7 @@ public class StudentServlet implements Servlet {
 
         try{
             Class.forName("com.mysql.cj.jdbc.Driver");
-            String url="jdbc:mysql://localhost:3306/bjpowernode?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&useSSL=true";
+            String url="jdbc:mysql://localhost:3306/mysql?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&useSSL=true";
             String user="root";
             String password = "root";
 
@@ -47,7 +47,8 @@ public class StudentServlet implements Servlet {
             }
         }catch(ClassNotFoundException |SQLException e){
             e.printStackTrace();
-        } finally {
+        } finally
+        {
             if (rs != null) {
                 try {
                     rs.close();
